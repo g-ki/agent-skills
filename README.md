@@ -14,25 +14,46 @@ Typical flow: `productive-thinking` → `task-breakdown` → `deliver-project` (
 
 ## Install
 
-Any agent supported by the [`skills`](https://github.com/vercel-labs/skills) CLI:
+Pick one method per agent. Installing both gives you every skill twice.
+
+<details open>
+<summary><strong>Claude Code</strong> (plugin, updates itself)</summary>
 
 ```sh
-npx skills add g-ki/agent-skills
+claude plugin marketplace add g-ki/agent-skills
+claude plugin install agent-skills@g-ki
 ```
 
-Install a single skill:
+</details>
+
+<details>
+<summary><strong>Any other agent, or editable files</strong> (manual updates)</summary>
 
 ```sh
-npx skills add g-ki/agent-skills --skill task-breakdown
+npx skills@latest add g-ki/agent-skills -a <agent>   # cursor, opencode, windsurf, amp, ...; omit -a to choose
+npx skills@latest add g-ki/agent-skills --skill task-breakdown   # a single skill
 ```
 
-### Manual (Claude Code)
+Update with `npx skills@latest update`.
+
+</details>
+
+<details>
+<summary><strong>Manual copy</strong></summary>
 
 ```sh
 git clone https://github.com/g-ki/agent-skills.git
 cp -R agent-skills/skills/* ~/.claude/skills/        # all projects
 # or: cp -R agent-skills/skills/* .claude/skills/    # current project only
 ```
+
+</details>
+
+## Design
+
+- Small, composable skills: each does one step and hands off through a file (RFC, tasks file, decision record), so you can use any of them alone.
+- Templates and references live next to the skill that uses them.
+- Skills with side effects (`deliver-project`, `productive-thinking`) are manual-only via `disable-model-invocation`.
 
 ## License
 

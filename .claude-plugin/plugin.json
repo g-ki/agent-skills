@@ -1,0 +1,16 @@
+{
+  "name": "agent-skills",
+  "version": "1.0.0",
+  "description": "Agent skills that take a hard engineering problem from idea to RFC to tickets to merged PRs.",
+  "author": { "name": "g-ki", "url": "https://github.com/g-ki" },
+  "repository": "https://github.com/g-ki/agent-skills",
+  "license": "MIT",
+  "keywords": ["engineering", "skills", "rfc", "planning", "tickets", "pull-requests"],
+  "skills": [
+    "./skills/productive-thinking",
+    "./skills/task-breakdown",
+    "./skills/implement-task",
+    "./skills/spike-task",
+    "./skills/deliver-project"
+  ]
+}

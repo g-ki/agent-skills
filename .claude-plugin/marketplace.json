@@ -1,0 +1,14 @@
+{
+  "name": "g-ki",
+  "owner": { "name": "g-ki", "url": "https://github.com/g-ki" },
+  "description": "Skills for going from idea to RFC to tickets to merged PRs.",
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "source": "./",
+      "description": "Productive thinking, task breakdown, implementation, spikes and project delivery.",
+      "category": "engineering",
+      "keywords": ["engineering", "skills", "rfc", "planning", "tickets"]
+    }
+  ]
+}
